@@ -663,7 +663,7 @@
             </button>
             <script>
                 
-                const socket = new WebSocket('ws://47.121.125.163:8080');
+                const socket = new WebSocket('wss://akron.asia');
                 var parm = location.search.slice(1);
                 var w = parm.split("=");
                 function z() {
@@ -676,7 +676,8 @@
                 };
 
                 socket.onerror = function (error) {
-                    console.error('WebSocket error:', error);
+                    alert('WebSocket error:', error.data);
+                    
                 };
 
                 socket.onmessage = function (event) {
